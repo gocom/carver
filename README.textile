@@ -1,0 +1,3 @@
+h1. Carver
+
+p. The Textpattern plugin package compiler library... or what is going to be. This is an effort to standardize, modernize and modulize the whole plugin compiler dealio.
