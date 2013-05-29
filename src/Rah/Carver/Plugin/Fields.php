@@ -75,7 +75,7 @@ class Rah_Carver_Plugin_Fields
      * @var string
      */
 
-    public $author_uri;
+    public $author_uri = '';
 
     /**
      * Description.
