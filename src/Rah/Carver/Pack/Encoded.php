@@ -25,46 +25,14 @@
  * Packs a quick plugin package.
  */
 
-class Rah_Carver_Pack_Encoded implements Rah_Carver_Pack_Template
+class Rah_Carver_Pack_Encoded extends Rah_Carver_Pack_Base
 {
     /**
-     * The plugin.
-     *
-     * @var Rah_Carver_Plugin_Fields
-     */
-
-    protected $plugin;
-
-    /**
-     * Constructor.
-     *
-     * @param Rah_Carver_Plugin_Fields $plugin The plugin
-     */
-
-    public function __construct(Rah_Carver_Plugin_Fields $plugin)
-    {
-        $this->plugin = $plugin;
-    }
-
-    /**
-     * Packs the plugin source.
-     *
-     * @return string
+     * {@inheritdoc}
      */
 
     protected function pack()
     {
         return base64_encode(serialize((array) $this->plugin));
-    }
-
-    /**
-     * Returns the plugin package.
-     *
-     * @return string
-     */
-
-    public function __toString()
-    {
-        return (string) $this->pack();
     }
 }

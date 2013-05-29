@@ -22,17 +22,42 @@
  */
 
 /**
- * Packs a compressed plugin package.
+ * Packager base class.
  */
 
-class Rah_Carver_Pack_Compressed extends Rah_Carver_Pack_Base
+abstract class Rah_Carver_Pack_Base implements Rah_Carver_Pack_Template
 {
+    /**
+     * The plugin.
+     *
+     * @var Rah_Carver_Plugin_Fields
+     */
+
+    protected $plugin;
+
     /**
      * {@inheritdoc}
      */
 
-    protected function pack()
+    public function __construct(Rah_Carver_Plugin_Fields $plugin)
     {
-        return base64_encode(gzencode(serialize((array) $this->plugin)));
+        $this->plugin = $plugin;
+    }
+
+    /**
+     * Packs the plugin source.
+     *
+     * @return string
+     */
+
+    abstract protected function pack();
+
+    /**
+     * {@inheritdoc}
+     */
+
+    public function __toString()
+    {
+        return (string) $this->pack();
     }
 }
