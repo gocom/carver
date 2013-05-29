@@ -177,7 +177,7 @@ class Rah_Carver_Plugin_Fields
      * @deprecated
      */
 
-    public $help;
+    public $help = '';
 
     /**
      * Enables legacy raw help documentation.
