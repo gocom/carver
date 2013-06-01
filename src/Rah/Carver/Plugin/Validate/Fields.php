@@ -28,6 +28,22 @@
 class Rah_Carver_Plugin_Validate_Fields
 {
     /**
+     * Regular expression for validating semver.
+     *
+     * @var string
+     */
+
+    protected $semverRegex = '/^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/';
+
+    /**
+     * Regular expression for validating plugin name.
+     *
+     * @var string
+     */
+
+    protected $nameRegex = '/^[a-z0-9]{3}_[a-z0-9\_]{0,64}$/';
+
+    /**
      * The plugin.
      *
      * @var Rah_Carver_Plugin_Fields
@@ -55,7 +71,7 @@ class Rah_Carver_Plugin_Validate_Fields
 
     public function isValidName()
     {
-        if (preg_match('/^[a-z0-9]{3}_[a-z0-9\_]{0,64}$/i', (string) $this->plugin->name))
+        if (preg_match($this->nameRegex, (string) $this->plugin->name))
         {
             return true;
         }
@@ -72,7 +88,7 @@ class Rah_Carver_Plugin_Validate_Fields
 
     public function isValidVersion()
     {
-        if (preg_match('/^[0-9]+\.[0-9]+\.[0-9]+$/', (string) $this->plugin->version))
+        if (preg_match($this->semverRegex, (string) $this->plugin->version))
         {
             return true;
         }
