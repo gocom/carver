@@ -1,0 +1,26 @@
+{
+    "name": "textpattern/carver",
+    "description": "CLI for Textpattern CMS",
+    "keywords": ["textpattern", "cli"],
+    "homepage": "https://github.com/gocom/carver",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Jukka Svahn",
+            "homepage": "https://github.com/gocom",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/gocom/carver/issues",
+        "source": "https://github.com/gocom/carver"
+    },
+    "autoload": {
+        "psr-0": {
+            "Textpattern\\Carver\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/console": "2.4.*"
+    }
+}
