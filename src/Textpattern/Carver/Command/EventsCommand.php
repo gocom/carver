@@ -58,7 +58,7 @@ class EventsCommand extends Command
             }
         }
 
-        $output->writeln('<info>Available events [ event : step ] :<info>');
+        $output->writeln('<info>Available events [ event : step ] :</info>');
         sort($events);
         $output->writeln(array_unique($events));
     }
