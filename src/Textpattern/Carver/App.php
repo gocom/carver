@@ -29,5 +29,6 @@ require __DIR__ . '/../../../vendor/autoload.php';
 
 $console = new Application('Carver', '0.0.0');
 $console->add(new Command\EventsCommand());
+$console->add(new Command\PrefCommand());
 $console->add(new Command\TriggerCommand());
 $console->run();
