@@ -24,7 +24,6 @@
 namespace Textpattern\Carver\Command;
 
 use Textpattern\Carver\Textpattern\Inject;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -38,6 +37,8 @@ class PrefCommand extends Command
 {
     protected function configure()
     {
+        //class_exists('\Textpattern\Carver\Command\Command');
+
         $this
             ->setName('txp:pref')
             ->setDescription('Sets or gets a preference value')
