@@ -42,7 +42,18 @@ class PrefCommand extends Command
             ->setName('txp:pref')
             ->setDescription('Sets or gets a preference value')
             ->addArgument('name', InputArgument::REQUIRED, 'The name')
-            ->addArgument('value', InputArgument::OPTIONAL, 'The value');
+            ->addArgument('value', InputArgument::OPTIONAL, 'The value')
+            ->setHelp(<<<EOF
+The <info>txp:pref</info> command accesses Textpattern preference
+strings stored in the database. It can be used to read strings:
+
+<info>carver txp:pref sitename</info>
+
+And to update:
+
+<info>carver txp:pref sitename "My site"
+EOF
+            );
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
