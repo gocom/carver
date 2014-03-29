@@ -8,9 +8,9 @@ After cloning install the dependencies with Composer:
 
 bc. $ composer install
 
-Run the CLI by running the App.php:
+Run the CLI by running the @carver@ bin:
 
-bc. $ php src/Textpattern/Carver/App.php help
+bc. $ ./bin/carver help
 
 h2. The plan
 

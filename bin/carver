@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 /*
@@ -20,15 +21,26 @@
  * You should have received a copy of the GNU General Public License
  * along with Carver. If not, see <http://www.gnu.org/licenses/>.
  */
+ 
+/**
+ * The main binary.
+ */
 
 namespace Textpattern\Carver;
 
-use Symfony\Component\Console\Application;
+define('CARVER_BIN_PATH', __FILE__);
 
-require __DIR__ . '/../../../vendor/autoload.php';
+$autoloaders = array(
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+);
 
-$console = new Application('Carver', '0.0.0');
-$console->add(new Command\EventsCommand());
-$console->add(new Command\PrefCommand());
-$console->add(new Command\TriggerCommand());
-$console->run();
+foreach ($autoloaders as $autoloader) {
+    if (file_exists($autoloader)) {
+        require $autoloader;
+        break;
+    }
+}
+
+$application = new Application();
+$application->run();

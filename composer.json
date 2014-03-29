@@ -22,5 +22,6 @@
     },
     "require": {
         "symfony/console": "2.4.*"
-    }
+    },
+    "bin": ["bin/carver"]
 }
