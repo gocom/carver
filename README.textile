@@ -1,5 +1,7 @@
 h1. Carver
 
+"Packagist":https://packagist.org/packages/textpattern/carver
+
 Textpattern CMS command line interface. *Work in progress*.
 
 h2. Developing
