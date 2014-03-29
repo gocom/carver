@@ -26,7 +26,7 @@ namespace Textpattern\Carver;
 use Symfony\Component\Console\Application as ConsoleApplication;
 
 /**
- * The carver application.
+ * The console application.
  *
  * This class creates a new Carver CLI
  * application.
