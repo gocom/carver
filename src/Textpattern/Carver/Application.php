@@ -57,6 +57,7 @@ class Application extends ConsoleApplication
         return array_merge(parent::getDefaultCommands(), array(
             new Command\EventsCommand(),
             new Command\PrefCommand(),
+            new Command\TextpackInstallCommand(),
             new Command\TriggerCommand(),
         ));
     }
