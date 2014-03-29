@@ -62,7 +62,7 @@ class Find
 
             if (!self::$path) {
                 throw new \InvalidArgumentException(
-                    'Textpattern installation location was not found.'
+                    'Textpattern installation was not found under the current directory.'
                 );
             }
         }
