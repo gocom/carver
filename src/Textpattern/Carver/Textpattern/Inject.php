@@ -47,22 +47,6 @@ class Inject
      */
 
     static public $cwd = '';
-
-    /**
-     * Original plugin status.
-     *
-     * @var int
-     */
-
-    static public $plugins = 1;
-
-    /**
-     * Original admin-side plugin status.
-     *
-     * @var int
-     */
-
-    static public $admin_side_plugins = 1;
 }
 
 if (!Inject::$ready && new Textpattern() && Textpattern::$path) {
@@ -117,16 +101,6 @@ if (!Inject::$ready && new Textpattern() && Textpattern::$path) {
         }
     }
 
-    // Disable plugins during the updating and installing.
-    // Loading plugins here would cause a FATAL error when invoking
-    // plugin's updater callback, as the plugin would be evaluated
-    // twice.
-
-    //Inject::$plugins = get_pref('use_plugins', 1, true);
-    //Inject::$admin_side_plugins = get_pref('admin_side_plugins', 1, true);
-    //set_pref('use_plugins', 0);
-    //set_pref('admin_side_plugins', 0);
-
     try {
         foreach (array(
             './publish.php',
@@ -145,18 +119,8 @@ if (!Inject::$ready && new Textpattern() && Textpattern::$path) {
         $event = '';
         $step = '';
 
-        /*if (file_exists('./include/txp_plugin.php')) {
-            require_once './include/txp_plugin.php';
-        }*/
     } catch (Exception $e) {
     }
 
-    // Reset plugin preferences to what they were before disabling.
-    // Hopefully the installed plugin was written properly, and we
-    // can get there and the process doesn't die on errors.
-
-    //set_pref('admin_side_plugins', Inject::$admin_side_plugins);
-    //set_pref('use_plugins', Inject::$plugins);
-    //$admin_side_plugins = $prefs['admin_side_plugins'] = $use_plugin = $prefs['use_plugins'] = 0;
     chdir(Inject::$cwd);
 }
