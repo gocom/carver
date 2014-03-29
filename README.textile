@@ -1,8 +1,14 @@
 h1. Carver
 
-"Packagist":https://packagist.org/packages/textpattern/carver
+"Packagist":https://packagist.org/packages/textpattern/carver | "Issues":https://github.com/gocom/carver/issues
 
 Textpattern CMS command line interface. *Work in progress*.
+
+h2. Install
+
+Using "Composer":http://getcomposer.org:
+
+bc. $ composer install textpattern/carver
 
 h2. Developing
 
