@@ -8,7 +8,7 @@ h2. Install
 
 Using "Composer":http://getcomposer.org:
 
-bc. $ composer install textpattern/carver
+bc. $ composer require textpattern/carver
 
 h2. Developing
 
