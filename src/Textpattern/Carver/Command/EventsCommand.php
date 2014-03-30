@@ -24,6 +24,7 @@
 namespace Textpattern\Carver\Command;
 
 use Textpattern\Carver\Textpattern\Inject;
+use Symfony\Component\Console\Helper\TableHelper;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -47,18 +48,26 @@ class EventsCommand extends Command
         global $plugin_callback;
         new Inject();
 
-        $event = array();
+        $events = array();
 
-        foreach ($plugin_callback as $callback) {
-            if ($callback['step']) {
-                $events[] = $callback['event'].' : '.$callback['step'];
-            } else {
-                $events[] = $callback['event'];
-            }
+        foreach ($plugin_callback as $event) {
+            $events[] = array($event['event'], $event['step']);
         }
 
-        $output->writeln('<info>Available events [ event : step ] :</info>');
-        sort($events);
-        $output->writeln(array_unique($events));
+        $events = array_unique($events, SORT_REGULAR);
+
+        usort($events, function ($a, $b) {
+
+            if ($a[0] === $b[0]) {
+                return strcmp($a[1], $b[1]);
+            }
+
+            return strcmp($a[0], $b[0]);
+        });
+
+        $table = $this->getHelperSet()->get('table')
+            ->setHeaders(array('Event', 'Step'))
+            ->setRows($events)
+            ->render($output);
     }
 }
