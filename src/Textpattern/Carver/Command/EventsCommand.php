@@ -40,7 +40,15 @@ class EventsCommand extends Command
     {
         $this
             ->setName('txp:events')
-            ->setDescription('Lists available callback events');
+            ->setDescription('Lists available callback events')
+            ->setHelp(
+<<<EOF
+The <info>txp:events</info> command returns a list of triggerable
+callback events that have handlers attached to them.
+These events can be triggered, and the handlers invoked,
+with the <info>txp:trigger</info> command.
+EOF
+            );
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
