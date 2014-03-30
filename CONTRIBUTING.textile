@@ -1,0 +1,27 @@
+h1. Contributing
+
+h2. License
+
+"GNU General Public License, version 2":https://github.com/gocom/carver/raw/master/LICENSE.
+
+h2. Versioning
+
+"Semantic versioning":http://semver.org/.
+
+h2. Setting up dependencies
+
+After cloning install the dependencies with Composer:
+
+bc. $ composer install
+
+h2. Running
+
+Run the CLI by running the @carver@ bin:
+
+bc. $ ./bin/carver help
+
+h2. Compiling a PHAR
+
+Using "Box":https://github.com/kherge/php-box:
+
+bc. $ box build
