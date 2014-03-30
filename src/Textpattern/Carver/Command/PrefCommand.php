@@ -44,7 +44,8 @@ class PrefCommand extends Command
             ->setDescription('Sets or gets a preference value')
             ->addArgument('name', InputArgument::REQUIRED, 'The name')
             ->addArgument('value', InputArgument::OPTIONAL, 'The value')
-            ->setHelp(<<<EOF
+            ->setHelp(
+<<<EOF
 The <info>txp:pref</info> command accesses Textpattern preference
 strings stored in the database. It can be used to read strings:
 
