@@ -23,5 +23,8 @@
     "require": {
         "symfony/console": "2.4.*"
     },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "1.5.*"
+    },
     "bin": ["bin/carver"]
 }
