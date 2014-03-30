@@ -1,0 +1,19 @@
+{
+    "chmod": "0755",
+    "compactors": [
+        "Herrera\\Box\\Compactor\\Composer",
+        "Herrera\\Box\\Compactor\\Json"
+    ],
+    "directories": ["src"],
+    "files": ["LICENSE"],
+    "finder": [
+        {
+            "name": ["*"],
+            "exclude": ["Tests", "tests", "phpunit"],
+            "in": "vendor"
+        }
+    ],
+    "main": "bin/carver",
+    "output": "carver.phar",
+    "stub": true
+}
