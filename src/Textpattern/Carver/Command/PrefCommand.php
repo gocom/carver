@@ -37,8 +37,6 @@ class PrefCommand extends Command
 {
     protected function configure()
     {
-        //class_exists('\Textpattern\Carver\Command\Command');
-
         $this
             ->setName('txp:pref')
             ->setDescription('Sets or gets a preference value')
@@ -53,7 +51,7 @@ strings stored in the database. It can be used to read strings:
 
 And to update:
 
-<info>carver txp:pref sitename "My site"
+<info>carver txp:pref sitename "My site"</info>
 EOF
             );
     }
